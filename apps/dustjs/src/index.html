@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/../../public/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Examples Template" />
+        <link rel="apple-touch-icon" href="/../../public/images/logo.png" />
+        <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+        <!-- <link type="text/css" rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" /> -->
+        <!-- <link type="text/css" rel="stylesheet" href="/../../public/index.css" /> -->
+        <title>Dust.js Examples and Playground</title>
+    </head>
+    <body class="bg-light">
+        <header class="bd-header d-flex align-items-stretch border-bottom bg-light app-header">
+            <a href="/"><img src="/../../public/images/logo.svg" class="app-logo" alt="logo" /></a>
+            <span class="fs-4 app-title">Dust.js Examples and Playground</span>
+        </header>
+        <div class="container-fluid">
+            <!-- <div>test</div> -->
+            <div class="row">
+                <div class="col">
+                    <div class="accordion">
+                        <div class="accordion-item m-3">
+                            <h2 class="accordion-header" id="dust-template-title">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#dust-template-editor-container" aria-expanded="true" aria-controls="dust-template-editor-container">Dust Template</button>
+                            </h2>
+                            <div id="dust-template-editor-container" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <div id="dust_editor" style="height: 450px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item m-3">
+                            <h2 class="accordion-header" id="json-editor-title">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#json-editor-container" aria-expanded="true" aria-controls="json-editor-container">Data</button>
+                            </h2>
+                            <div id="json-editor-container" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <div id="json_editor" style="height: 450px"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="accordion">
+                        <div class="accordion-item m-3">
+                            <h2 class="accordion-header" id="output-display-title">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#output-display-container" aria-expanded="true" aria-controls="output-display-container">Output</button>
+                            </h2>
+                            <div id="output-display-container" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                                <div class="accordion-body">
+                                    <pre id="output_display" data-lang="text/html" style="height: 900px"></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>

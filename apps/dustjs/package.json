@@ -2,7 +2,6 @@
   "name": "examples-dustjs",
   "version": "1.0.0",
   "description": "Dust.js Examples and Playground",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neoskx/examples.git"
@@ -18,15 +17,20 @@
   },
   "homepage": "https://github.com/neoskx/examples#readme",
   "scripts": {
-    "start": "parcel index.html --port $PORT",
-    "build": "parcel build index.html",
-    "postinstall": "npm run build"
+    "dev": "parcel serve ./src/index.html --port $PORT",
+    "build": "rm -rf ../../apps-dist/dustjs && mkdir -p ../../apps-dist/dustjs && parcel build ./src/index.html --public-url /dustjs && cp -rf dist/ ../../apps-dist/dustjs",
+    "preinstall": "cd ../.. && npm ci"
   },
   "dependencies": {
     "dustjs-linkedin": "2.7.5"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
-    "parcel-bundler": "^1.12.5"
+    "@parcel/transformer-image": "^2.0.0-nightly.2400",
+    "@parcel/transformer-webmanifest": "^2.0.0-nightly.2400",
+    "parcel": "^2.0.0-beta.3.1"
+  },
+  "alias": {
+    "public": "/../../../public"
   }
 }

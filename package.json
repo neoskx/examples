@@ -42,6 +42,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
+    "cssnano": "^5.0.7",
     "zx": "2.0.0"
   }
 }
