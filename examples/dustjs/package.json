@@ -1,0 +1,32 @@
+{
+  "name": "examples-dustjs",
+  "version": "1.0.0",
+  "description": "Dust.js Examples and Playground",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neoskx/examples.git"
+  },
+  "keywords": [
+    "examples",
+    "dust.js"
+  ],
+  "author": "Neo Xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neoskx/examples/issues"
+  },
+  "homepage": "https://github.com/neoskx/examples#readme",
+  "scripts": {
+    "start": "parcel index.html --port $PORT",
+    "build": "parcel build index.html",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "dustjs-linkedin": "2.7.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}

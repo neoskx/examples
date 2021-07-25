@@ -1,0 +1,47 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "All examples I did when I learn technologies",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neoskx/examples.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "html",
+    "react",
+    "css",
+    "dustjs",
+    "knockout"
+  ],
+  "author": "Neo Xu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neoskx/examples/issues"
+  },
+  "engines": {
+    "node": ">=14.8.0"
+  },
+  "homepage": "https://github.com/neoskx/examples#readme",
+  "dependencies": {
+    "@popperjs/core": "2.9.2",
+    "bootstrap": "5.0.0",
+    "jquery": "3.6.0",
+    "monaco-editor": "0.26.1",
+    "express": "4.17.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "zx": "2.0.0"
+  }
+}
