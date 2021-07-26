@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/neoskx/examples#readme",
   "scripts": {
-    "start": "export PORT = 4321 && parcel index.html --port $PORT",
-    "build": "parcel build index.html --public-url /dustjs --out-dir ../../apps-dist/dustjs"
+    "start": "export PORT = 4321 && npx parcel index.html --port $PORT",
+    "build": "npx parcel build index.html --public-url /dustjs --out-dir ../../apps-dist/dustjs"
   },
   "dependencies": {
     "@popperjs/core": "2.9.2",
@@ -29,7 +29,7 @@
     "monaco-editor": "0.26.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "parcel-bundler": "^1.12.5"
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "1.12.5"
   }
 }

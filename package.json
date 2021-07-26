@@ -6,7 +6,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "build-apps": "cd ./scripts && npx zx build.mjs",
+    "build-apps-old": "cd ./scripts && npx zx build.mjs",
+    "build-apps": "cd ./scripts && sh ./build-dustjs.sh",
     "build-docker-image": "sh ./scripts/build-docker-image.sh"
   },
   "repository": {
@@ -42,8 +43,10 @@
     "fs-extra": "10.0.0"
   },
   "devDependencies": {
-    "cssnano": "^5.0.7",
+    "cssnano": "5.0.7",
     "fs-extra": "10.0.0",
-    "zx": "2.0.0"
+    "zx": "2.0.0",
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "1.12.5"
   }
 }

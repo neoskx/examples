@@ -16,17 +16,21 @@ const APPS_DIST_DIR = path.join(CURRENT_DIR.stdout, "../apps-dist");
 const apps = await fs.readdirSync(APPS_DIR);
 for (let i = 0; i < apps.length; i++) {
     if (apps[i] !== TEMPLATE_FOLDER_NAME) {
-        await $`cd ${APPS_DIR} && cd ${apps[i]} && npm install && npm run build`;
+        let appPath = path.join(APPS_DIR, apps[i]);
+        console.log(`App Path: ${appPath}`);
+        await $`cd ${appPath} && npm install`;
+        await $`cd ${appPath} && ls -l`;
+        // await $`cd ${appPath} && npm run build`;
         
-        let packageJSONPath = path.join(APPS_DIR, apps[i], "package.json");
-        console.log(`packageJSONPath: ${packageJSONPath}`);
-        let packageJSON = require(packageJSONPath);
-        appsMetaData.push({
-            name: packageJSON.displayName || packageJSON.name,
-            description: packageJSON.description,
-            keywords: packageJSON.keywords,
-            url: `/${apps[i]}`
-        });
+        // let packageJSONPath = path.join(APPS_DIR, apps[i], "package.json");
+        // console.log(`packageJSONPath: ${packageJSONPath}`);
+        // let packageJSON = require(packageJSONPath);
+        // appsMetaData.push({
+        //     name: packageJSON.displayName || packageJSON.name,
+        //     description: packageJSON.description,
+        //     keywords: packageJSON.keywords,
+        //     url: `/${apps[i]}`
+        // });
 
     }
 }
