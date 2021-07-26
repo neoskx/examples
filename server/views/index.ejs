@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="<%= description || '' %>" />
+        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <title><%= title || 'Examples' %></title>
+        <link type="text/css" rel="stylesheet" href="/libs/bootstrap-5-0-2/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="/stylesheets/index.css" />
+    </head>
+    <body class="bg-light">
+        <header class="bd-header d-flex align-items-stretch border-bottom bg-light app-header">
+            <div class="container">
+                <a href="/"><img src="/images/logo.svg" class="app-logo" alt="logo" /></a>
+                <span class="fs-4 app-title"><%= title || 'Examples' %></span>
+            </div>
+        </header>
+        <main>
+            <section class="py-5 text-center container">
+                <div class="row py-lg-5">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <!-- <h1 class="fw-light"><%= title || 'Examples' %></h1> -->
+                        <p class="lead text-muted"><%= description || '' %></p>
+                        <p>
+                            <% keywords.forEach(function(keyword){ %>
+                            <span class="badge bg-secondary"><%= keyword || '' %></span>
+                            <% }); %>
+                        </p>
+                        <p>
+                            <a target="_blank" href="<%= homepage || '' %>" class="btn btn-primary my-2">Github</a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <div class="album py-5 bg-light">
+                <div class="container">
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <% appsMetadata.forEach(function(appMetadata){ %>
+                    <div class="col">
+                      <div class="card shadow-sm">
+                        <div class="card-header">
+                          <%= appMetadata.name || '#' %>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text"><%= appMetadata.description || '#' %></p>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                              <% appMetadata.keywords.forEach(function(keyword){ %>
+                                <span class="badge bg-light text-dark"><%= keyword || '' %></span>
+                                <% }); %>
+                            </div>
+                            <!-- <small class="text-muted">9 mins</small> -->
+                          </div>
+                        </div>
+                        <div class="card-footer">
+                          <a class="btn btn-primary btn-sm" href="<%= appMetadata.url || '#' %>">Open</a>
+                        </div>
+                      </div>
+                    </div>
+                    <% }); %>
+                  </div>
+                </div>
+            </div>
+        </main>
+        <script src="/javascripts/index.js"></script>
+        <script src="/libs/jquery-3.6.0.min.js"></script>
+    </body>
+</html>

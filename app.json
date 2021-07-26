@@ -1,0 +1,17 @@
+{
+  "name": "examples",
+  "description": "All examples I did when I learn technologies",
+  "keywords": [
+    "javascript",
+    "nodejs"
+  ],
+  "logo": "https://raw.githubusercontent.com/neoskx/examples/main/public/images/logo.png",
+  "env": {
+  },
+  "success_url": "/",
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs"
+    }
+  ]
+}

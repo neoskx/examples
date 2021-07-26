@@ -1,14 +1,14 @@
 {
-  "name": "examples-dustjs",
-  "displayName": "Dust.JS",
+  "name": "examples-template",
+  "displayName": "Template",
   "version": "1.0.0",
-  "description": "Dust.js Examples and Playground",
+  "description": "A template used for create example",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neoskx/examples.git"
   },
   "keywords": [
-    "dust.js"
+    "template"
   ],
   "author": "Neo Xu",
   "license": "ISC",
@@ -22,7 +22,6 @@
     "preinstall": "cd ../.. && npm ci"
   },
   "dependencies": {
-    "dustjs-linkedin": "2.7.5"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
