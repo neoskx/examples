@@ -1,7 +1,9 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "/../../public/stylesheets/index.css";
 import * as bootstrap from "bootstrap";
+import compiler from "dustjs-linkedin/lib/compiler";
 import $ from "jquery";
 import * as monaco from "monaco-editor";
-import compiler from "dustjs-linkedin/lib/compiler";
 import dust from "dustjs-linkedin/lib/dust";
 
 $(function () {
