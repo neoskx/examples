@@ -6,7 +6,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "prestart": "cd ./scripts && npx zx build.mjs"
+    "build-apps": "cd ./scripts && npx zx build.mjs",
+    "build-docker-image": "sh ./scripts/build-docker-image.sh"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,8 @@
     "debug": "~2.6.9",
     "http-errors": "~1.6.3",
     "ejs": "3.1.6",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "fs-extra": "10.0.0"
   },
   "devDependencies": {
     "cssnano": "^5.0.7",
