@@ -1,11 +1,12 @@
-const { exec } = require("child_process");
+const { exec, execSync } = require("child_process");
 const path = require("path");
 const express = require('express');
 
 function build(app) {
     if (!process.env.DONT_BUILD_WHEN_START) {
         const ROOT_DIR = path.join(__dirname, '..');
-        console.log("need to build apps, path: ", ROOT_DIR);
+        console.log("Need to build apps, path: ", ROOT_DIR);
+        console.log(execSync(`node -v && npm -v`));
         exec(`cd ${ROOT_DIR} && ls -l && npm run build-apps`, (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
