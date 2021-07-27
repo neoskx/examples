@@ -14,11 +14,8 @@ const APPS_DIST_DIR = path.join(CURRENT_DIR.stdout, "../apps-dist");
 
 // Get all applications
 const apps = await fs.readdirSync(APPS_DIR);
-
 for (let i = 0; i < apps.length; i++) {
-    const appPath = path.join(APPS_DIR, apps[i]);
-    console.log(`app path: `, appPath);
-    if (apps[i] !== TEMPLATE_FOLDER_NAME&&apps[i]!='.DS_Store') {
+    if (apps[i] !== TEMPLATE_FOLDER_NAME&&apps[i]!=='.DS_Store') {
         await $`cd ${APPS_DIR} && cd ${apps[i]} && npm install && npm run build`;
         
         let packageJSONPath = path.join(APPS_DIR, apps[i], "package.json");

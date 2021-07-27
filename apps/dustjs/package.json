@@ -1,6 +1,6 @@
 {
   "name": "examples-dustjs",
-  "displayName": "Dust.JS",
+  "displayName": "Dust.js",
   "version": "1.0.0",
   "description": "Dust.js Examples and Playground",
   "repository": {
@@ -8,6 +8,7 @@
     "url": "git+https://github.com/neoskx/examples.git"
   },
   "keywords": [
+    "examples",
     "dust.js"
   ],
   "author": "Neo Xu",
@@ -17,22 +18,21 @@
   },
   "homepage": "https://github.com/neoskx/examples#readme",
   "scripts": {
-    "dev": "export PORT=4321 && parcel serve ./src/index.html --port $PORT --open",
-    "build": "parcel build ./src/index.html --public-url /dustjs --dist-dir ../../apps-dist/dustjs"
+    "start": "export PORT = 4321 && parcel index.html --port $PORT",
+    "build": "parcel build index.html --public-url /dustjs --out-dir ../../apps-dist/dustjs"
   },
   "dependencies": {
-    "dustjs-linkedin": "2.7.5"
+    "@popperjs/core": "2.9.2",
+    "bootstrap": "5.0.0",
+    "dustjs-linkedin": "2.7.5",
+    "jquery": "3.6.0",
+    "monaco-editor": "0.26.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
-    "@parcel/transformer-image": "^2.0.0-nightly.2400",
-    "@parcel/transformer-webmanifest": "^2.0.0-nightly.2400",
-    "parcel": "^2.0.0-beta.3.1"
+    "parcel-bundler": "^1.12.5"
   },
   "optionalDependencies": {
-    "fsevents": "2.1.2"
-  },
-  "alias": {
-    "public": "/../../../public"
+    "fsevents": "^2.1.2"
   }
 }
