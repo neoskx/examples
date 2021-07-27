@@ -1,0 +1,23 @@
+name: Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        name: Build Apps
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out git repo
+              uses: actions/checkout@v2
+            - name: Install node_modules
+              run: npm install
+            - name: Build Apps
+              run : npm run build-apps
+            - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+              with:
+                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                  heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
+                  heroku_email: ${{secrets.HEROKU_EMAIL}}
