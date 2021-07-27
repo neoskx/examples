@@ -14,7 +14,8 @@ function build(app) {
                 return;
             }
             if (stderr) {
-                console.log(`stderr: ${stderr}`);
+                // console.log(`stderr: ${stderr}`);
+                console.log('build success!');
                 app.use(express.static(path.join(__dirname, '../apps-dist')));
                 return;
             }
