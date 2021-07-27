@@ -1,14 +1,14 @@
 {
-  "name": "examples-template",
-  "displayName": "Template",
+  "name": "examples-knockoutjs",
+  "displayName": "Knockout.js",
   "version": "1.0.0",
-  "description": "A template used for create example",
+  "description": "Examples about knockout.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neoskx/examples.git"
   },
   "keywords": [
-    "template"
+    "knockout.js"
   ],
   "author": "Neo Xu",
   "license": "ISC",
@@ -17,16 +17,17 @@
   },
   "homepage": "https://github.com/neoskx/examples#readme",
   "scripts": {
-    "dev": "export PORT=4321 && parcel serve ./src/index.html --port $PORT --open",
-    "build": "parcel build ./src/index.html --public-url /template --dist-dir ../../appsdist/template"
+    "dev": "export PORT=4321 && parcel serve ./src/index.html --no-cache --port $PORT --open",
+    "build": "parcel build ./src/index.html --no-optimize --no-scope-hoist --no-cache --public-url /knockoutjs --dist-dir ../../appsdist/knockoutjs"
   },
   "dependencies": {
+    "marked": "2.0.3",
+    "knockout": "3.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@parcel/transformer-image": "^2.0.0-nightly.2400",
     "@parcel/transformer-webmanifest": "^2.0.0-nightly.2400",
-    "@parcel/transformer-js": "2.0.0-alpha.3",
     "parcel": "^2.0.0-beta.3.1"
   },
   "optionalDependencies": {

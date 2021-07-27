@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/../../public/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="description" content="Examples KnockoutJS" />
+        <link rel="apple-touch-icon" href="/../../public/images/logo.png" />
+        <title>KnockoutJS Template</title>
+    </head>
+    <body class="bg-light">
+        <header class="bd-header d-flex align-items-stretch border-bottom bg-light app-header">
+            <img src="/../../public/images/logo.svg" class="app-logo" alt="logo" />
+            <span class="fs-4 app-title">KnockoutJS Examples</span>
+        </header>
+        <aside class="bd-aside sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-2">
+            <h2 class="h6 pt-4 pb-3 mb-4 border-bottom">Index</h2>
+            <nav class="small" id="toc">
+                <ul class="list-unstyled">
+                    <li class="my-2">
+                        <button class="btn d-inline-flex align-items-center" data-bs-toggle="collapse" aria-expanded="true" data-bs-target="#section1-collapse" aria-controls="section1-collapse">Control Flow</button>
+                        <ul class="list-unstyled ps-3" id="section1-collapse" style="">
+                            <li>
+                                <a class="d-inline-flex align-items-center rounded" href="#section1-section1" data-format="markdown">`with` and `using` bindings</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- <li class="my-2">
+                <button
+                  class="btn d-inline-flex align-items-center"
+                  data-bs-toggle="collapse"
+                  aria-expanded="true"
+                  data-bs-target="#section2-collapse"
+                  aria-controls="section2-collapse"
+                >
+                  Section 2
+                </button>
+                <ul class="list-unstyled ps-3" id="section2-collapse" style="">
+                  <li>
+                    <a
+                      class="d-inline-flex align-items-center rounded"
+                      href="#section2-section1"
+                      >Section 2 Sub Section 1</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="d-inline-flex align-items-center rounded"
+                      href="#section2-section2"
+                      >Section 2 Sub Section 2</a
+                    >
+                  </li>
+                </ul>
+              </li> -->
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="bd-cheatsheet container-fluid bg-body">
+            <section id="section1">
+                <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Control Flow</h2>
+                <article class="my-3" id="section1-section1">
+                    <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+                        <h3 data-format="markdown">`with` and `using` bindings</h3>
+                        <a class="d-flex align-items-center" href="https://knockoutjs.com/documentation/with-binding.html">Documentation</a>
+                    </div>
+
+                    <div>
+                        <div id="control-flow-with-using">
+                            <div class="card mb-3">
+                                <h5 class="card-header">View Model</h5>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="mb-3">
+                                            <label for="cityName" class="form-label">City Name</label>
+                                            <input class="form-control" id="cityName" data-bind="value: cityName" aria-describedby="cityNameHelp" />
+                                            <div id="cityNameHelp" class="form-text">Type a valid City Name</div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="coordinateData" class="form-label">Coordinate Data</label>
+                                            <textarea id="coordinateData" class="form-control" rows="5" data-bind="value: coordinateStr, class:coordinateInputClass"></textarea>
+                                            <div class="form-text">Type a valiad JSON</div>
+                                        </div>
+                                        <!-- <button
+                      type="submit"
+                      class="btn btn-primary"
+                      data-bind="click: updateView"
+                    >
+                      Update View
+                    </button> -->
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <h5 class="card-header" data-format="markdown">Use `with`</h5>
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-sm-3">City Name</dt>
+                                        <dd class="col-sm-9" data-bind="text: cityName"></dd>
+                                    </dl>
+                                    <!-- ko with: coordinateData -->
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Latitude</dt>
+                                        <dd class="col-sm-9" data-bind="text: $data.latitude"></dd>
+                                        <dt class="col-sm-3">Longitude</dt>
+                                        <dd class="col-sm-9" data-bind="text: $data.longitude"></dd>
+                                    </dl>
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <h5 class="card-header" data-format="markdown">Use `if` and `using`</h5>
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-sm-3">City Name</dt>
+                                        <dd class="col-sm-9" data-bind="text: cityName"></dd>
+                                    </dl>
+                                    <!-- ko if: coordinateData -->
+                                    <!-- ko using: coordinateData -->
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Latitude</dt>
+                                        <dd class="col-sm-9" data-bind="text: $data.latitude"></dd>
+                                        <dt class="col-sm-3">Longitude</dt>
+                                        <dd class="col-sm-9" data-bind="text: $data.longitude"></dd>
+                                    </dl>
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+
+                            <div class="card mb-2">
+                                <h5 class="card-header" data-format="markdown">Use `using` only</h5>
+                                <div class="card-body">
+                                    <dl class="row">
+                                        <dt class="col-sm-3">City Name</dt>
+                                        <dd class="col-sm-9" data-bind="text: cityName"></dd>
+                                    </dl>
+                                    <!-- ko using: coordinateData -->
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Latitude</dt>
+                                        <dd class="col-sm-9" data-bind="text: $data.latitude"></dd>
+                                        <dt class="col-sm-3">Longitude</dt>
+                                        <dd class="col-sm-9" data-bind="text: $data.longitude"></dd>
+                                    </dl>
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- <article class="my-3" id="section1-section2">
+              <div
+                class="
+                  bd-heading
+                  sticky-xl-top
+                  align-self-start
+                  mt-5
+                  mb-3
+                  mt-xl-0
+                  mb-xl-2
+                "
+              >
+                <h3>Section 1 Sub Section 2</h3>
+              </div>
+    
+              <div >
+                Section 1 Sub Section 2 content
+              </div>
+            </article> -->
+            </section>
+
+            <!-- <section id="section2">
+            <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">
+              Section 2
+            </h2>
+            <article class="my-3" id="section2-section1">
+              <div
+                class="
+                  bd-heading
+                  sticky-xl-top
+                  align-self-start
+                  mt-5
+                  mb-3
+                  mt-xl-0
+                  mb-xl-2
+                "
+              >
+                <h3>Section 2 Sub Section 1</h3>
+              </div>
+    
+              <div >
+                Section 2 Sub Section 1 content
+              </div>
+            </article>
+            <article class="my-3" id="section2-section2">
+              <div
+                class="
+                  bd-heading
+                  sticky-xl-top
+                  align-self-start
+                  mt-5
+                  mb-3
+                  mt-xl-0
+                  mb-xl-2
+                "
+              >
+                <h3>Section 2 Sub Section 2</h3>
+              </div>
+    
+              <div >
+                Section 2 Sub Section 2 content
+              </div>
+            </article>
+          </section> -->
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+</html>
