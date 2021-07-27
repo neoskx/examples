@@ -1,25 +1,31 @@
-const { exec, execSync } = require("child_process");
+const { spawn, execSync } = require("child_process");
 const path = require("path");
 const express = require('express');
 
 function build(app) {
-    console.log('build apps');
     if (!process.env.DONT_BUILD_WHEN_START) {
         const ROOT_DIR = path.join(__dirname, '..');
         console.log("Need to build apps, path: ", ROOT_DIR);
         console.log(execSync(`node -v && npm -v`).toString());
-        exec(`cd ${ROOT_DIR} && ls -l && npm run build-apps`, (error, stdout, stderr) => {
-            if (error) {
-                console.log(`error: ${error.message}`);
-                return;
-            }
-            if (stderr) {
-                // console.log(`stderr: ${stderr}`);
-                console.log('build success!');
+
+        let buildApp = spawn('npm', ['run', 'build-apps'], { cwd: ROOT_DIR});
+
+        buildApp.stdout.on('data', function (data) {
+            console.log(data.toString());
+        });
+
+        buildApp.stderr.on('data', function (data) {
+            console.log(data.toString());
+        });
+
+        buildApp.on('exit', function (code) {
+            if(code.toString()==='0'){
                 app.use(express.static(path.join(__dirname, '../apps-dist')));
-                return;
+                console.log(`Successfully build all apps`);
+                // console.log(execSync(`ls -l`, {cwd: path.join(ROOT_DIR, 'app-dist')}).toString());
+            }else{
+                console.error(`some error happend. error code: ${code}`);
             }
-            console.log(`stdout: ${stdout}`);
         });
     }
 }
