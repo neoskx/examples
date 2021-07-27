@@ -9,15 +9,15 @@ function build(app) {
         console.log(execSync(`node -v && npm -v`).toString());
         exec(`cd ${ROOT_DIR} && ls -l && npm run build-apps`, (error, stdout, stderr) => {
             if (error) {
-                console.log(`error: ${error.message}`);
+                // console.log(`error: ${error.message}`);
                 return;
             }
             if (stderr) {
-                console.log(`stderr: ${stderr}`);
+                // console.log(`stderr: ${stderr}`);
                 app.use(express.static(path.join(__dirname, '../apps-dist')));
                 return;
             }
-            console.log(`stdout: ${stdout}`);
+            // console.log(`stdout: ${stdout}`);
         });
     }
 }

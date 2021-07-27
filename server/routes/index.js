@@ -7,7 +7,7 @@ const packageJSON = require("../../package.json");
 /* GET home page. */
 router.get("/", function (req, res, next) {
     const metadataPath = path.join(__dirname, "../../apps-dist/metadata.json");
-    console.log("metadataPath: ", metadataPath);
+    // console.log("metadataPath: ", metadataPath);
     let appsMetadata = [];
     if (existsSync(metadataPath)) {
         appsMetadata = JSON.parse(readFileSync(metadataPath, "utf8"));

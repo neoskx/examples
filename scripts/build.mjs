@@ -19,7 +19,7 @@ for (let i = 0; i < apps.length; i++) {
         await $`cd ${APPS_DIR} && cd ${apps[i]} && npm install && npm run build`;
         
         let packageJSONPath = path.join(APPS_DIR, apps[i], "package.json");
-        console.log(`packageJSONPath: ${packageJSONPath}`);
+        // console.log(`packageJSONPath: ${packageJSONPath}`);
         let packageJSON = require(packageJSONPath);
         appsMetaData.push({
             name: packageJSON.displayName || packageJSON.name,
