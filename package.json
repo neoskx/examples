@@ -1,11 +1,12 @@
 {
   "name": "examples",
   "version": "1.0.0",
-  "displayName": "Examples",
-  "description": "All examples I did when I learn technologies",
+  "displayName": "Neo's examples",
+  "description": "I am a full-stack developer, I think one of the best ways to learn technology is by doing examples. So I collected all the examples I did in one place and share them with you, I hope this can help you also.",
   "main": "server/app.js",
   "scripts": {
     "start": "node ./bin/www",
+    "dev": "npm run build-apps && npm start",
     "build-apps": "cd ./scripts && sh build.sh",
     "build-docker-image": "sh ./scripts/build-docker-image.sh"
   },

@@ -10,9 +10,9 @@ or
 
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?style=for-the-badge&logo=gitpod)](https://gitpod.io/#https://github.com/neoskx/examples) 
 
-Or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+<!-- Comment because if build apps in heroku free tier always has javascript out of memory issue-->
+<!-- Or
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy) -->
 
 ## Available Scripts
 
@@ -25,10 +25,10 @@ Automatically open [http://localhost:1234/](http://localhost:1234/) in your defa
 
 The page will reload if you make edits.<br/>
 
-### `npm run build` or `yarn build`
+### `npm run build-apps` or `yarn build-apps`
 
-Builds the app for production to the `dist` folder. 
+Builds all apps for production to the `appsdist` folder. 
 
 ### `npm start` or `yarn start`
 
-Builds the app for production mode and start server.
+Builds the app for production mode and start server. Make sure you run `npm run build-apps` before

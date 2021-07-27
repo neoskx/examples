@@ -5,66 +5,80 @@
         <link rel="icon" href="/images/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="<%= description || '' %>" />
+        <meta name="description" content="<%- description || '' %>" />
         <link rel="apple-touch-icon" href="/images/logo.png" />
-        <title><%= title || 'Examples' %></title>
+        <title><%- title || 'Examples' %></title>
         <link type="text/css" rel="stylesheet" href="/libs/bootstrap-5-0-2/css/bootstrap.min.css" />
         <link type="text/css" rel="stylesheet" href="/stylesheets/index.css" />
     </head>
-    <body class="bg-light">
+    <body>
         <header class="bd-header d-flex align-items-stretch border-bottom bg-light app-header">
             <div class="container">
                 <a href="/"><img src="/images/logo.svg" class="app-logo" alt="logo" /></a>
-                <span class="fs-4 app-title"><%= title || 'Examples' %></span>
+                <span class="fs-4 app-title"><%- title || 'Examples' %></span>
             </div>
         </header>
         <main>
             <section class="py-5 text-center container">
                 <div class="row py-lg-5">
                     <div class="col-lg-6 col-md-8 mx-auto">
-                        <!-- <h1 class="fw-light"><%= title || 'Examples' %></h1> -->
-                        <p class="lead text-muted"><%= description || '' %></p>
+                        <figure class="text-center">
+                            <blockquote class="blockquote">
+                                <h2>
+                                  <p>纸上得来终觉浅，绝知此事要躬行</p>
+                                  <p>Knowledges obtained on the papers always feel shallow, must know this thing to practice</p>
+                                </h2>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">陆游(Lu You, China) in <cite title="Source Title">《冬夜读书示子聿》</cite></figcaption>
+                        </figure>
+                        <p class="lead text-muted"><%- description || '' %></p>
                         <p>
                             <% keywords.forEach(function(keyword){ %>
-                            <span class="badge bg-secondary"><%= keyword || '' %></span>
+                            <span class="badge bg-secondary"><%- keyword || '' %></span>
                             <% }); %>
                         </p>
                         <p>
-                            <a target="_blank" href="<%= homepage || '' %>" class="btn btn-primary my-2">Github</a>
+                            <a target="_blank" href="<%- homepage || '' %>" class="btn btn-light">Github</a>
                         </p>
                     </div>
                 </div>
             </section>
             <div class="album py-5 bg-light">
                 <div class="container">
-                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <% appsMetadata.forEach(function(appMetadata){ %>
-                    <div class="col">
-                      <div class="card shadow-sm">
-                        <div class="card-header">
-                          <%= appMetadata.name || '#' %>
-                        </div>
-                        <div class="card-body">
-                          <p class="card-text"><%= appMetadata.description || '#' %></p>
-                          <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                              <% appMetadata.keywords.forEach(function(keyword){ %>
-                                <span class="badge bg-light text-dark"><%= keyword || '' %></span>
-                                <% }); %>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <% appsMetadata.forEach(function(appMetadata){ %>
+                        <div class="col">
+                            <div class="card shadow-sm">
+                                <div class="card-header"><%- appMetadata.name || '#' %></div>
+                                <div class="card-body">
+                                    <p class="card-text"><%- appMetadata.description || '#' %></p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <% appMetadata.keywords.forEach(function(keyword){ %>
+                                            <span class="badge bg-light text-dark"><%- keyword || '' %></span>
+                                            <% }); %>
+                                        </div>
+                                        <!-- <small class="text-muted">9 mins</small> -->
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <a class="btn btn-primary btn-sm" href="<%- appMetadata.url || '#' %>">Open</a>
+                                </div>
                             </div>
-                            <!-- <small class="text-muted">9 mins</small> -->
-                          </div>
                         </div>
-                        <div class="card-footer">
-                          <a class="btn btn-primary btn-sm" href="<%= appMetadata.url || '#' %>">Open</a>
-                        </div>
-                      </div>
+                        <% }); %>
                     </div>
-                    <% }); %>
-                  </div>
                 </div>
             </div>
         </main>
+        <footer class="text-muted py-5">
+          <div class="container">
+            <p class="float-end mb-1">
+              <a href="#">Back to top</a>
+            </p>
+            <p class="mb-1">Neo's examples - Make life productive!</p>
+          </div>
+        </footer>
         <script src="/javascripts/index.js"></script>
         <script src="/libs/jquery-3.6.0.min.js"></script>
     </body>

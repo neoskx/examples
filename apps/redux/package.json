@@ -1,0 +1,36 @@
+{
+  "name": "examples-redux",
+  "version": "1.0.0",
+  "displayName": "Redux without UI Framework",
+  "description": "A redux example without UI framework, try to understand how redux works",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neoskx/examples.git"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neoskx/examples/issues"
+  },
+  "homepage": "https://github.com/neoskx/examples#readme",
+  "scripts": {
+    "dev": "export PORT=4321 && parcel serve index.html --no-cache --port $PORT --open",
+    "build": "parcel build index.html --no-optimize --no-scope-hoist --no-cache --public-url /redux --dist-dir ../../appsdist/redux"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@parcel/packager-raw-url": "^2.0.0-nightly.2400",
+    "@parcel/transformer-image": "^2.0.0-nightly.2400",
+    "@parcel/transformer-webmanifest": "^2.0.0-nightly.2400",
+    "parcel": "^2.0.0-beta.3.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.2"
+  }
+}

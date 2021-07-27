@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/../../public/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="/../../public/images/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Redux store example without UI Framework"
+    />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="public/manifest.json" />
+    <link type="text/css" href="index.css" rel="stylesheet" />
+    <link type="text/css" href="counter.css" rel="stylesheet" />
+    <title>Redux example without UI Framework</title>
+  </head>
+  <body>
+    <header class="bd-header d-flex align-items-stretch border-bottom bg-light app-header">
+      <a href="/"><img src="/../../public/images/logo.svg" class="app-logo" alt="logo" /></a>
+      <span class="fs-4 app-title">Redux example without UI Framework</span>
+    </header>
+    <div class="App">
+      <header>
+        <img src="./public/logo.svg" class="App-logo" alt="logo" />
+        <!-- <p>
+          Clicked: <span id="value">0</span> times
+          <button id="increment">+</button>
+          <button id="decrement">-</button>
+          <button id="incrementIfOdd">Increment if odd</button>
+          <button id="incrementAsync">Increment async</button>
+        </p> -->
+
+        <div>
+          <div class="redux-row">
+            <button id="increment" class="redux-button" aria-label="Increment value">
+              +
+            </button>
+            <span class="redux-value" id="value"></span>
+            <button id="decrement" class="redux-button" aria-label="Decrement value">
+              -
+            </button>
+          </div>
+          <div class="redux-row">
+            <!-- <input
+              class="textbox"
+              aria-label="Set increment amount"
+            /> -->
+            <button id="incrementIfOdd" class="redux-button">Increment if odd</button>
+            <button id="incrementAsync" class="redux-button redux-asyncButton">
+              Increment async
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
