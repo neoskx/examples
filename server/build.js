@@ -20,7 +20,7 @@ function build(app) {
 
         buildApp.on('exit', function (code) {
             if(code.toString()==='0'){
-                app.use(express.static(path.join(__dirname, '../apps-dist')));
+                app.use(express.static(path.join(__dirname, '../appsdist')));
                 console.log(`Successfully build all apps`);
                 // console.log(execSync(`ls -l`, {cwd: path.join(ROOT_DIR, 'app-dist')}).toString());
             }else{

@@ -19,7 +19,7 @@
   "homepage": "https://github.com/neoskx/examples#readme",
   "scripts": {
     "start": "export PORT = 4321 && parcel index.html --port $PORT",
-    "build": "parcel build index.html --public-url /dustjs --out-dir ../../apps-dist/dustjs"
+    "build": "parcel build index.html --public-url /dustjs --out-dir ../../appsdist/dustjs"
   },
   "dependencies": {
     "@popperjs/core": "2.9.2",

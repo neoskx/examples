@@ -10,7 +10,7 @@ const path = await import("path"); // We can use import,
 const TEMPLATE_FOLDER_NAME = "template";
 const CURRENT_DIR = await $`pwd`;
 const APPS_DIR = path.join(CURRENT_DIR.stdout, "../apps");
-const APPS_DIST_DIR = path.join(CURRENT_DIR.stdout, "../apps-dist");
+const appsdist_DIR = path.join(CURRENT_DIR.stdout, "../appsdist");
 
 // Get all applications
 const apps = await fs.readdirSync(APPS_DIR);
@@ -32,4 +32,4 @@ for (let i = 0; i < apps.length; i++) {
     }
 }
 
-fs.writeJSONSync(path.join(APPS_DIST_DIR, "metadata.json"), appsMetaData);
+fs.writeJSONSync(path.join(appsdist_DIR, "metadata.json"), appsMetaData);

@@ -1,19 +1,19 @@
-FROM nikolaik/python-nodejs:python3.9-nodejs14-alpine
+FROM mhart/alpine-node:14
 
 LABEL maintainer="Neo Xu"
 
 # create app directory
-WORKDIR /usr/bitsky
-
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make git fts-dev
+WORKDIR /usr/neoskx
 
 COPY package*.json ./
 # Bundle app source
-COPY . .
-
+COPY appsdist/ ./appsdist/
+COPY apps/ ./apps/
+COPY bin/ ./bin/
+COPY public/ ./public/
+COPY server/ ./server/
 # Only install 
-RUN npm install
-# RUN cd ./scripts && npx zx build.mjs
+RUN npm ci
 
 EXPOSE 9099
 CMD ["node", "./bin/www"]

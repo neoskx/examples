@@ -108,6 +108,6 @@ dist
 .tern-port
 
 # compiled apps
-apps-dist
+appsdist
 
 .vscode

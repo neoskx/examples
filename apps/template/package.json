@@ -18,7 +18,7 @@
   "homepage": "https://github.com/neoskx/examples#readme",
   "scripts": {
     "dev": "export PORT=4321 && parcel serve ./src/index.html --port $PORT --open",
-    "build": "parcel build ./src/index.html --public-url /dustjs --dist-dir ../../apps-dist/dustjs",
+    "build": "parcel build ./src/index.html --public-url /dustjs --dist-dir ../../appsdist/dustjs",
     "preinstall": "cd ../.. && npm ci"
   },
   "dependencies": {
