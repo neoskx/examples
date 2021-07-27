@@ -6,7 +6,8 @@
   "main": "server/app.js",
   "scripts": {
     "start": "node ./bin/www",
-    "build-apps": "cd ./scripts && npx zx build.mjs",
+    "build-apps": "cd ./scripts && sh build.sh",
+    "poststart": "cd ./scripts && sh build.sh",
     "build-docker-image": "sh ./scripts/build-docker-image.sh"
   },
   "repository": {
@@ -45,8 +46,6 @@
     "fsevents": "^2.1.2"
   },
   "devDependencies": {
-    "cssnano": "^5.0.7",
-    "fs-extra": "10.0.0",
-    "zx": "2.0.0"
+    "cssnano": "^5.0.7"
   }
 }

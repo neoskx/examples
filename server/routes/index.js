@@ -1,24 +1,41 @@
 const express = require("express");
-const { existsSync, readFileSync } = require("fs");
+// const { existsSync, readFileSync } = require("fs");
+const fs = require('fs-extra');
 const path = require("path");
 const router = express.Router();
 const packageJSON = require("../../package.json");
+const TEMPLATE_FOLDER_NAME = "template";
+
+function readMetadataJSON(){
+    const appsDistPath = path.join(__dirname, "../../apps-dist");
+    const appsMetadata = [];
+    if (fs.existsSync(appsDistPath)) {
+        const apps = fs.readdirSync(appsDistPath);
+        for (let i = 0; i < apps.length; i++) {
+            if (apps[i] !== TEMPLATE_FOLDER_NAME&&apps[i]!=='.DS_Store') {
+                let packageJSONPath = path.join(appsDistPath, apps[i], "package.json");
+                let packageJSON = require(packageJSONPath);
+                appsMetaData.push({
+                    name: packageJSON.displayName || packageJSON.name,
+                    description: packageJSON.description,
+                    keywords: packageJSON.keywords,
+                    url: `/${apps[i]}`
+                });
+            }
+        }
+    }
+
+    return appsMetadata;
+}
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-    const metadataPath = path.join(__dirname, "../../apps-dist/metadata.json");
-    // console.log("metadataPath: ", metadataPath);
-    let appsMetadata = [];
-    if (existsSync(metadataPath)) {
-        appsMetadata = JSON.parse(readFileSync(metadataPath, "utf8"));
-    }
-
     res.render("index", {
         title: packageJSON.displayName || packageJSON.name || "Examples",
         description: packageJSON.description,
         homepage: packageJSON.homepage,
         keywords: packageJSON.keywords,
-        appsMetadata: appsMetadata,
+        appsMetadata: readMetadataJSON(),
     });
 });
 

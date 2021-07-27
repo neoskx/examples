@@ -28,6 +28,7 @@ for (let i = 0; i < apps.length; i++) {
             url: `/${apps[i]}`
         });
 
+        console.log(`finish ${apps[i]}`);
     }
 }
 
